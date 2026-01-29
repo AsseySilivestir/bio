@@ -3,129 +3,174 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Silivestir Assey | Software Developer</title>
+<title>Silivestir Assey | Developer & AI Enthusiast</title>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Fira+Code&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <style>
-    /* ======== Global Styles ======== */
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-        font-family: 'Roboto', sans-serif;
-        background: linear-gradient(135deg, #1f1c2c, #928dab);
-        color: #fff;
-        min-height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 20px;
-    }
-    a { text-decoration: none; color: #fff; transition: 0.3s; }
-    a:hover { color: #ffd700; }
+/* ===== Global Styles ===== */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: 'Roboto', sans-serif;
+    background: #111;
+    color: #fff;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
 
-    /* ======== Container ======== */
-    .bio-container {
-        background: rgba(0, 0, 0, 0.6);
-        padding: 40px;
-        border-radius: 20px;
-        max-width: 900px;
-        width: 100%;
-        box-shadow: 0 8px 30px rgba(0,0,0,0.5);
-        animation: fadeIn 1s ease-in-out;
-    }
-    @keyframes fadeIn {
-        from { opacity: 0; transform: translateY(-20px);}
-        to { opacity: 1; transform: translateY(0);}
-    }
+/* ===== Particle Background ===== */
+#particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    top: 0;
+    left: 0;
+}
 
-    /* ======== Header ======== */
-    .header {
-        text-align: center;
-        margin-bottom: 30px;
-    }
-    .header img {
-        width: 120px;
-        height: 120px;
-        border-radius: 50%;
-        border: 3px solid #ffd700;
-        margin-bottom: 15px;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-    }
-    .header h1 {
-        font-size: 2.8em;
-        background: linear-gradient(90deg, #ffd700, #ff6b6b);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
-    .header p {
-        font-size: 1.2em;
-        color: #f0f0f0;
-        margin-top: 10px;
-        min-height: 30px;
-    }
+/* ===== Container ===== */
+.bio-container {
+    background: rgba(0, 0, 0, 0.85);
+    padding: 50px;
+    border-radius: 25px;
+    max-width: 1000px;
+    width: 100%;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+    margin: 50px auto;
+    animation: fadeIn 1s ease-in-out;
+}
+@keyframes fadeIn { from { opacity: 0; transform: translateY(-20px);} to { opacity: 1; transform: translateY(0);} }
 
-    /* ======== Skills ======== */
-    .skills {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 15px;
-        justify-content: center;
-        margin-bottom: 30px;
-    }
-    .skill {
-        background: rgba(255, 255, 255, 0.1);
-        padding: 10px 20px;
-        border-radius: 12px;
-        font-weight: 500;
-        transition: 0.3s;
-    }
-    .skill:hover {
-        background: #ffd700;
-        color: #000;
-    }
+/* ===== Header ===== */
+.header { text-align: center; margin-bottom: 40px; }
+.header img {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    border: 4px solid #ffd700;
+    margin-bottom: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.6);
+}
+.header h1 {
+    font-size: 3em;
+    background: linear-gradient(90deg, #ffd700, #ff6b6b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.header p {
+    font-size: 1.2em;
+    color: #f0f0f0;
+    margin-top: 12px;
+    min-height: 40px;
+}
 
-    /* ======== Projects ======== */
-    .projects {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 20px;
-    }
-    .project-card {
-        background: rgba(255,255,255,0.1);
-        padding: 20px;
-        border-radius: 15px;
-        transition: 0.3s;
-    }
-    .project-card:hover {
-        transform: translateY(-5px);
-        background: #ff6b6b;
-    }
-    .project-card h3 { margin-bottom: 10px; }
-    .project-card p { font-size: 0.95em; line-height: 1.4; }
+/* ===== Skills ===== */
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+.skill {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 12px 20px;
+    border-radius: 15px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: 0.3s;
+}
+.skill i {
+    font-size: 1.2em;
+    transition: 0.3s;
+}
+.skill:hover { 
+    background: #ffd700; 
+    color: #000; 
+}
+.skill:hover i { transform: rotate(20deg) scale(1.2); color: #000; cursor: default; }
 
-    /* ======== Footer ======== */
-    footer {
-        text-align: center;
-        margin-top: 40px;
-        font-size: 0.9em;
-        color: #ccc;
-    }
+/* ===== Projects ===== */
+.projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+.project-card {
+    background: rgba(255,255,255,0.1);
+    padding: 25px;
+    border-radius: 20px;
+    transition: 0.3s;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.project-card:hover { 
+    transform: translateY(-6px); 
+    background: #ff6b6b; 
+}
+.project-card h3 { margin-bottom: 5px; }
+.project-card p { font-size: 0.95em; line-height: 1.4; }
 
-    /* ======== Typewriter ======== */
-    .typewriter-text {
-        display: inline;
-        border-right: 2px solid #ffd700;
-        white-space: nowrap;
-        overflow: hidden;
-        animation: blink 0.75s step-end infinite;
-    }
-    @keyframes blink {
-        50% { border-color: transparent }
-    }
+/* ===== Footer ===== */
+footer {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 0.9em;
+    color: #ccc;
+}
+
+/* ===== Typewriter ===== */
+.typewriter-text {
+    display: inline-block;
+    border-right: 2px solid #ffd700;
+    white-space: nowrap;
+    overflow: hidden;
+    font-weight: 500;
+}
+
+/* ===== Floating Contact Button ===== */
+.contact-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #ffd700;
+    color: #000;
+    padding: 15px 25px;
+    border-radius: 50px;
+    font-weight: bold;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+    transition: 0.3s;
+    z-index: 100;
+}
+.contact-btn:hover {
+    transform: translateY(-4px);
+    background: #ff6b6b;
+    color: #fff;
+}
+
+/* ===== Community Running Emoji ===== */
+.community {
+    font-size: 1.5em;
+    text-align: center;
+    margin-top: 20px;
+    animation: float 2s infinite alternate;
+}
+@keyframes float {
+    from { transform: translateY(0);}
+    to { transform: translateY(-10px);}
+}
 </style>
 </head>
 <body>
 
+<!-- Particle Background -->
+<div id="particles-js"></div>
+
 <div class="bio-container">
-    <!-- Header with Avatar -->
+    <!-- Header -->
     <div class="header">
         <img src="https://avatars.githubusercontent.com/u/244289863?s=96&v=4" alt="Silivestir Assey">
         <h1>Silivestir Assey</h1>
@@ -135,58 +180,122 @@
     <!-- Skills -->
     <h2 style="text-align:center; margin-bottom:15px;">💻 Skills</h2>
     <div class="skills">
-        <div class="skill">React</div>
-        <div class="skill">Express.js</div>
-        <div class="skill">MongoDB</div>
-        <div class="skill">PostgreSQL</div>
-        <div class="skill">Java & Android</div>
-        <div class="skill">TensorFlow.js</div>
-        <div class="skill">Plotly</div>
-        <div class="skill">HTML / CSS / Bootstrap</div>
-        <div class="skill">jQuery / AJAX</div>
-        <div class="skill">Git</div>
+        <div class="skill tooltip" data-tooltip="React.js"><i class="fab fa-react"></i>React</div>
+        <div class="skill tooltip" data-tooltip="Express.js"><i class="fas fa-server"></i>Express.js</div>
+        <div class="skill tooltip" data-tooltip="MongoDB"><i class="fas fa-database"></i>MongoDB</div>
+        <div class="skill tooltip" data-tooltip="PostgreSQL"><i class="fas fa-database"></i>PostgreSQL</div>
+        <div class="skill tooltip" data-tooltip="Java & Android"><i class="fab fa-java"></i>Java/Android</div>
+        <div class="skill tooltip" data-tooltip="TensorFlow.js"><i class="fas fa-robot"></i>TensorFlow.js</div>
+        <div class="skill tooltip" data-tooltip="Plotly"><i class="fas fa-chart-line"></i>Plotly</div>
+        <div class="skill tooltip" data-tooltip="HTML/CSS/Bootstrap"><i class="fab fa-html5"></i>HTML/CSS</div>
+        <div class="skill tooltip" data-tooltip="jQuery/AJAX"><i class="fas fa-code"></i>jQuery/AJAX</div>
+        <div class="skill tooltip" data-tooltip="Git"><i class="fab fa-git-alt"></i>Git</div>
+        <div class="skill tooltip" data-tooltip="AI & Time Series Prediction"><i class="fas fa-robot"></i>AI/Time Series</div>
+        <div class="skill tooltip" data-tooltip="Game Development"><i class="fas fa-car"></i>Games</div>
+        <div class="skill tooltip" data-tooltip="Mobile & Web Apps"><i class="fas fa-mobile-alt"></i>Mobile/Web</div>
+        <div class="skill tooltip" data-tooltip="Open Source Tools"><i class="fas fa-tools"></i>Open Source</div>
     </div>
 
     <!-- Projects -->
-    <h2 style="text-align:center; margin-bottom:15px;">🚀 Projects</h2>
+    <h2 style="text-align:center; margin-bottom:15px;">🚀 Projects & Open Source</h2>
     <div class="projects">
-        <div class="project-card">
-            <h3>Toast.js</h3>
-            <p>A lightweight library to easily show toast messages to users with minimal code.</p>
-            <a href="https://www.npmjs.com/package/toast.js" target="_blank">View on NPM</a>
-        </div>
-        <div class="project-card">
-            <h3>Express Auto Frontend</h3>
-            <p>Automatically connect modern frontends (React, Vue, Angular, Svelte) to your Express backend—zero configuration.</p>
-            <a href="https://www.npmjs.com/package/express-auto-frontend" target="_blank">View on NPM</a>
-        </div>
-        <div class="project-card">
-            <h3>KiswahiliScript</h3>
-            <p>A JavaScript transpiled programming language in Swahili for learning and experimentation.</p>
-            <a href="#" target="_blank">Learn More</a>
-        </div>
+        <div class="project-card tooltip" data-tooltip="View on NPM"><h3>Toast.js</h3><p>Lightweight library to show toast messages with minimal code.</p><a href="https://www.npmjs.com/package/toast.js" target="_blank">NPM</a></div>
+        <div class="project-card tooltip" data-tooltip="View on NPM"><h3>Express Auto Frontend</h3><p>Connects React/Vue/Angular/Svelte frontends to Express automatically.</p><a href="https://www.npmjs.com/package/express-auto-frontend" target="_blank">NPM</a></div>
+        <div class="project-card tooltip" data-tooltip="Explore"><h3>KiswahiliScript</h3><p>Swahili-transpiled JS language for learning and experimentation.</p><a href="https://silivestir.github.io/" target="_blank">Explore</a></div>
+        <div class="project-card tooltip" data-tooltip="View on jsDelivr"><h3>Splannes_routerjs</h3><p>JS routing library for Express apps (server + client navigation).</p><a href="https://www.jsdelivr.com/package/npm/splannes_routerjs" target="_blank">jsDelivr</a></div>
+        <div class="project-card"><h3>XMS Mobile App</h3><p>Modern Android app with messaging & interactive features.</p></div>
+        <div class="project-card"><h3>AI Time Series Predictor</h3><p>AI-powered tool for time series forecasting with TensorFlow.js.</p></div>
+        <div class="project-card"><h3>Driving Games</h3><p>Interactive driving games built with JS & React showcasing game mechanics.</p></div>
+        <div class="project-card"><h3>Tanzania Corridors Explorers</h3><p>Website project for tourism with interactive maps and data visualization.</p><a href="https://tanzaniacorridorsexplorers.com" target="_blank">Visit Site</a></div>
     </div>
+
+    <!-- Community Fun Emoji -->
+    <div class="community">🏃‍♂️🏃‍♀️ Join the community, let's code & create! 🚀👾</div>
+
+    <!-- Profiles & Contact -->
+    <h2 style="text-align:center; margin-top:40px; margin-bottom:15px;">🌐 Profiles & Contact</h2>
+    <p style="text-align:center;">
+        <a href="https://github.com/silivestir" target="_blank"><i class="fab fa-github"></i> GitHub: silivestir</a> | 
+        <a href="https://www.kaggle.com/silivestir" target="_blank"><i class="fas fa-brain"></i> Kaggle</a> | 
+        <a href="mailto:silivestirassey@gmail.com"><i class="fas fa-envelope"></i> Email Me</a>
+    </p>
 </div>
+
+<!-- Floating Contact Button -->
+<a class="contact-btn" href="mailto:silivestirassey@gmail.com"><i class="fas fa-envelope"></i> Email Me</a>
 
 <footer>
     &copy; 2026 Silivestir Assey. All rights reserved.
 </footer>
 
+<!-- Typewriter Script -->
 <script>
-    // ====== Typewriter Effect ======
-    const text = "I build modern web apps, tools, and AI-powered solutions. Welcome to my world of code!";
-    let index = 0;
-    const typewriter = document.getElementById('typewriter');
+const typewriterElement = document.getElementById('typewriter');
+const phrases = [
+    "AI Enthusiast & Time Series Predictor",
+    "Open Source Contributor & Tool Creator",
+    "Game Developer & Web App Builder",
+    "Mobile & Android Applications Expert",
+    "React, Express, TensorFlow.js, Plotly, and More"
+];
 
-    function type() {
-        if (index < text.length) {
-            typewriter.textContent += text.charAt(index);
-            index++;
-            setTimeout(type, 50);
+let phraseIndex = 0;
+let letterIndex = 0;
+let currentText = '';
+let isDeleting = false;
+
+function type() {
+    const currentPhrase = phrases[phraseIndex];
+    if (!isDeleting) {
+        currentText = currentPhrase.slice(0, letterIndex + 1);
+        letterIndex++;
+        typewriterElement.textContent = currentText;
+        if (letterIndex === currentPhrase.length) {
+            isDeleting = true;
+            setTimeout(type, 1500);
+            return;
+        }
+    } else {
+        currentText = currentPhrase.slice(0, letterIndex - 1);
+        letterIndex--;
+        typewriterElement.textContent = currentText;
+        if (letterIndex === 0) {
+            isDeleting = false;
+            phraseIndex = (phraseIndex + 1) % phrases.length;
         }
     }
+    setTimeout(type, isDeleting ? 50 : 100);
+}
+type();
+</script>
 
-    type();
+<!-- Particles.js CDN -->
+<script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+<script>
+particlesJS("particles-js", {
+    "particles": {
+        "number": { "value": 80, "density": { "enable": true, "value_area": 800 } },
+        "color": { "value": "#ffffff" },
+        "shape": { "type": "circle" },
+        "opacity": { "value": 0.5, "random": true },
+        "size": { "value": 3, "random": true },
+        "line_linked": { "enable": true, "distance": 150, "color": "#ffffff", "opacity": 0.4, "width": 1 },
+        "move": { "enable": true, "speed": 2, "direction": "none", "random": true, "straight": false, "out_mode": "out" }
+    },
+    "interactivity": {
+        "detect_on": "canvas",
+        "events": {
+            "onhover": { "enable": true, "mode": "repulse" },
+            "onclick": { "enable": true, "mode": "push" },
+            "resize": true
+        },
+        "modes": {
+            "repulse": { "distance": 100 },
+            "push": { "particles_nb": 4 }
+        }
+    },
+    "retina_detect": true
+});
 </script>
 </body>
 </html>
